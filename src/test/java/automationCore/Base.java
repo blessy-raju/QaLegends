@@ -7,6 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import utilities.WaitUtility;
+
 public class Base {
 	public WebDriver driver;
 
@@ -22,6 +24,7 @@ public class Base {
 		}
 		driver.manage().window().maximize();
 		driver.get("https://qalegend.com/billing/public/login");
+		WaitUtility.waitForAnElement(driver);
 	}
 
 	@BeforeMethod
