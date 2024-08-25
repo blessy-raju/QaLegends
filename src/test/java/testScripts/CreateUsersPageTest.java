@@ -20,6 +20,7 @@ import pageObjects.LoginPage;
 import pageObjects.UserManagementMenu;
 import pageObjects.UsersPage;
 import utilities.ExcelUtility;
+import utilities.PageUtility;
 import utilities.RandomDataUtility;
 
 public class CreateUsersPageTest extends Base {
@@ -32,61 +33,43 @@ public class CreateUsersPageTest extends Base {
 		String lName = RandomDataUtility.getLastname();
 		String expectedRole = ExcelUtility.getStringData(1, 0, "UserPage");
 		String commission = ExcelUtility.getNumericData(1, 1, "UserPage");
-		String expectedSuccessMessage = ExcelUtility.getStringData(1, 2, "UserPage");
+		// String expectedSuccessMessage = ExcelUtility.getStringData(1, 2, "UserPage");
 		String expectedContact = ExcelUtility.getStringData(1, 3, "UserPage");
+		String emailId = fName + "." + lName + "@yahoo.com";
+		String pwd = fName + "@" + lName;
+		String newUserName = fName + "." + lName;
 
 		LoginPage login = new LoginPage(driver);
 		login.enterUserName(userName);
 		login.enterPassword(password);
 		HomePage home = login.clickLoginButton();
 		home.clickEndTour();
+		home.clickUserManagementMenu();
 		UserManagementMenu usermanagement = new UserManagementMenu(driver);
-		usermanagement.clickUserManagementMenu();
 		UsersPage userspage = usermanagement.clickUsersMenu();
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//		wait.until(ExpectedConditions.elementToBeClickable(users));
-	
-		CreateUsersPage createusers=userspage.clickAddUserButton();
+		CreateUsersPage createusers = userspage.clickAddUserButton();
+		createusers.enterSurName(prefix);
+		createusers.enterFirstName(fName);
+		createusers.enterLastName(lName);
+		createusers.enterEmailId(emailId);
+		// createusers.selectRole(expectedRole);
+		createusers.clickRoles();
+		PageUtility.selectOption(createusers.getRoleLists(), expectedRole);
 
-		// WebElement isActive =
-		// driver.findElement(By.xpath("//input[@name='is_active']"));
-		WebElement saveButton = driver.findElement(By.xpath("//button[@type='submit']"));
-		WebElement selectedContacts = driver.findElement(By.xpath("//div[@class='icheckbox_square-blue']"));
-		String emailId = fName + "." + lName + "@yahoo.com";
-		String pwd = fName + "@" + lName;
-		String newUserName = fName + "." + lName;
-		surname.sendKeys(prefix);
-		firstName.sendKeys(fName);
-		lastName.sendKeys(lName);
-		emailIdField.sendKeys(emailId);
-		WebElement roles = driver.findElement(By.xpath("//span[@id='select2-role-container']"));
-		roles.click();
-		List<WebElement> rolesList = driver.findElements(By.xpath("//li[@class='select2-results__option']"));
-		for (int i = 0; i < rolesList.size(); i++) {
-			if (rolesList.get(i).getText().equals(expectedRole)) {
-				rolesList.get(i).click();
-				break;
-			}
-		}
-		newUserNameField.sendKeys(newUserName);
-		newUserPassword.sendKeys(pwd);
-		confirmPassword.sendKeys(pwd);
-		commissionPercentage.sendKeys(commission);
-		// isActive.click();
-		selectedContacts.click();
-		WebElement contacts = driver.findElement(By.xpath("//ul[@class='select2-selection__rendered']"));
-		contacts.click();
-		List<WebElement> contactLists = driver.findElements(By.xpath("//li[@class='select2-results__option']"));
-		for (int i = 0; i < contactLists.size(); i++) {
-			if (contactLists.get(i).getText().equals(expectedContact)) {
-				contactLists.get(i).click();
-				break;
-			}
-		}
-		saveButton.click();
+		createusers.enterUserName(newUserName);
+		createusers.enterPassword(pwd);
+		createusers.enterConfirmPassword(pwd);
+		createusers.enterSalesCommisions(commission);
+		createusers.clickAllowContactsCheckbox();
+		// createusers.selectContacts(expectedContact);
+		createusers.clickContacts();
+		PageUtility.selectOption(createusers.getContactLists(), expectedContact);
+		userspage = createusers.clickSaveButton();
 
-		String actualSuccessMessage = driver.findElement(By.xpath("//div[@class='toast-message']")).getText();
-		Assert.assertEquals(actualSuccessMessage, expectedSuccessMessage, "Invalid message after user creation");
+		userspage.enterSearchUserName(newUserName);
+
+		Assert.assertTrue(userspage.isNewlyCreatedUserPresent(emailId), "Newly created user is not added");
+
 	}
 
 	@Test
@@ -99,84 +82,45 @@ public class CreateUsersPageTest extends Base {
 		String expectedRole = ExcelUtility.getStringData(1, 0, "UserPage");
 		String commission = ExcelUtility.getNumericData(1, 1, "UserPage");
 		String expectedContact = ExcelUtility.getStringData(1, 3, "UserPage");
-
-		WebElement userNameField = driver.findElement(By.id("username"));
-		WebElement passwordField = driver.findElement(By.id("password"));
-		WebElement loginButton = driver.findElement(By.xpath("//button[@type='submit']"));
-		userNameField.sendKeys(userName);
-		passwordField.sendKeys(password);
-		loginButton.click();
-
-		WebElement endTour = driver.findElement(By.xpath("//button[@data-role='end']"));
-		endTour.click();
-
-		WebElement userManagement = driver.findElement(By.xpath("//span[text()='User Management']"));
-		userManagement.click();
-		WebElement users = driver.findElement(By.xpath("//span[normalize-space()='Users']"));
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(users));
-		users.click();
-		WebElement addButton = driver.findElement(By.xpath("//div[@class='box-tools']"));
-		addButton.click();
-		WebElement surname = driver.findElement(By.xpath("//input[@id='surname']"));
-		WebElement firstName = driver.findElement(By.id("first_name"));
-		WebElement lastName = driver.findElement(By.id("last_name"));
-		WebElement emailIdField = driver.findElement(By.id("email"));
-		WebElement newUserNameField = driver.findElement(By.id("username"));
-		WebElement newUserPassword = driver.findElement(By.id("password"));
-		WebElement confirmPassword = driver.findElement(By.id("confirm_password"));
-		WebElement commissionPercentage = driver.findElement(By.id("cmmsn_percent"));
-		WebElement saveButton = driver.findElement(By.xpath("//button[@type='submit']"));
-		WebElement selectedContacts = driver.findElement(By.xpath("//div[@class='icheckbox_square-blue']"));
-
 		String emailId = fName + "." + lName + "@yahoo.com";
-		String pwd = fName + "@" + lName;
+		String newUserPassword = fName + "@" + lName;
 		String newUserName = fName + "." + lName;
-		surname.sendKeys(prefix);
-		firstName.sendKeys(fName);
-		lastName.sendKeys(lName);
-		emailIdField.sendKeys(emailId);
-		WebElement roles = driver.findElement(By.xpath("//span[@id='select2-role-container']"));
-		roles.click();
-		List<WebElement> rolesList = driver.findElements(By.xpath("//li[@class='select2-results__option']"));
-		for (int i = 0; i < rolesList.size(); i++) {
-			if (rolesList.get(i).getText().equals(expectedRole)) {
-				rolesList.get(i).click();
-				break;
-			}
-		}
-		newUserNameField.sendKeys(newUserName);
-		newUserPassword.sendKeys(pwd);
-		confirmPassword.sendKeys(pwd);
-		commissionPercentage.sendKeys(commission);
-		selectedContacts.click();
-		WebElement contacts = driver.findElement(By.xpath("//ul[@class='select2-selection__rendered']"));
-		contacts.click();
-		List<WebElement> contactLists = driver.findElements(By.xpath("//li[@class='select2-results__option']"));
-		for (int i = 0; i < contactLists.size(); i++) {
-			if (contactLists.get(i).getText().equals(expectedContact)) {
-				contactLists.get(i).click();
-				break;
-			}
-		}
-		saveButton.click();
-		WebElement home = driver.findElement(By.xpath("//a[contains(@href,'public/home')]//span"));
-		home.click();
-		WebElement userMenu = driver.findElement(By.xpath("//a[@class='dropdown-toggle']//span"));
-		userMenu.click();
-		WebElement signOutButton = driver.findElement(By.xpath("//div[@class='pull-right']//a"));
-		signOutButton.click();
-		
-		//wait.until(ExpectedConditions.elementToBeClickable(userNameField));
-		WebElement newUserrNameField = driver.findElement(By.id("username"));
-		WebElement newUserPasswordField = driver.findElement(By.id("password"));
-		WebElement newUserLoginButton = driver.findElement(By.xpath("//button[@type='submit']"));
-		newUserrNameField.sendKeys(newUserName);
-		newUserPasswordField.sendKeys(pwd);
-		newUserLoginButton.click();
-		WebElement newUserMenu = driver.findElement(By.xpath("//a[@class='dropdown-toggle']//span"));
+		LoginPage login = new LoginPage(driver);
+		login.enterUserName(userName);
+		login.enterPassword(password);
+		HomePage homepage = login.clickLoginButton();
+		homepage.clickEndTour();
+		homepage.clickUserManagementMenu();
+		UserManagementMenu usermanagement = new UserManagementMenu(driver);
+		UsersPage userspage = usermanagement.clickUsersMenu();
+		CreateUsersPage createusers = userspage.clickAddUserButton();
+		createusers.enterSurName(prefix);
+		createusers.enterFirstName(fName);
+		createusers.enterLastName(lName);
+		createusers.enterEmailId(emailId);
+		// createusers.selectRole(expectedRole);
+		createusers.clickRoles();
+		PageUtility.selectOption(createusers.getRoleLists(), expectedRole);
+
+		createusers.enterUserName(newUserName);
+		createusers.enterPassword(newUserPassword);
+		createusers.enterConfirmPassword(newUserPassword);
+		createusers.enterSalesCommisions(commission);
+		createusers.clickAllowContactsCheckbox();
+		// createusers.selectContacts(expectedContact);
+		createusers.clickContacts();
+		PageUtility.selectOption(createusers.getContactLists(), expectedContact);
+		createusers.clickSaveButton();
+
+		homepage.clickHomeMenu();
+		homepage.clickLoggedInUserName();
+		homepage.clickSignOutButton();
+		login.enterUserName(newUserName);
+		login.enterPassword(newUserPassword);
+		homepage = login.clickLoginButton();
+
 		String expectedUserName = fName + " " + lName;
-		Assert.assertEquals(newUserMenu.getText(), expectedUserName, "Invalid user login");
+		Assert.assertEquals(homepage.getLoggedInUserName(), expectedUserName, "Invalid user login");
 
 	}
 }

@@ -15,14 +15,38 @@ public class HomePage {
 
 	@FindBy(xpath = "//a[@class='dropdown-toggle']//span")
 	WebElement loggedInUserName;
-	@FindBy(xpath="//button[@data-role='end']")
+	@FindBy(xpath = "//button[@data-role='end']")
 	WebElement endTour;
-	
+	@FindBy(xpath = "//a[contains(@href,'public/home')]//span")
+	WebElement homeMenu;
+	@FindBy(xpath = "//span[text()='User Management']")
+	WebElement userManagement;
+	@FindBy(xpath = "//div[@class='pull-right']//a")
+	WebElement signOutButton;
+
 	public String getLoggedInUserName() {
-		String userNameText=loggedInUserName.getText();
+		String userNameText = loggedInUserName.getText();
 		return userNameText;
 	}
+
 	public void clickEndTour() {
 		endTour.click();
 	}
+
+	public void clickHomeMenu() {
+		homeMenu.click();
+	}
+
+	public void clickUserManagementMenu() {
+		userManagement.click();
+	}
+
+	public void clickLoggedInUserName() {
+		loggedInUserName.click();
+	}
+
+	public void clickSignOutButton() {
+		signOutButton.click();
+	}
+
 }

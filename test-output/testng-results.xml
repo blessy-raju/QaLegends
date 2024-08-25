@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-22T18:54:22 IST" name="Default suite" finished-at="2024-08-22T18:54:39 IST" duration-ms="16220">
+  <suite started-at="2024-08-24T09:08:57 IST" name="Default suite" finished-at="2024-08-24T09:09:29 IST" duration-ms="31965">
     <groups>
     </groups>
-    <test started-at="2024-08-22T18:54:22 IST" name="Default test" finished-at="2024-08-22T18:54:39 IST" duration-ms="16220">
-      <class name="testScripts.PasswordResetPageTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScripts.PasswordResetPageTest@6cf0e0ba]" started-at="2024-08-22T18:54:22 IST" name="setBrowser" finished-at="2024-08-22T18:54:35 IST" duration-ms="12448" status="PASS">
+    <test started-at="2024-08-24T09:08:57 IST" name="Default test" finished-at="2024-08-24T09:09:29 IST" duration-ms="31965">
+      <class name="testScripts.CreateUsersPageTest">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScripts.CreateUsersPageTest@6cf0e0ba]" started-at="2024-08-24T09:08:57 IST" name="setBrowser" finished-at="2024-08-24T09:09:05 IST" duration-ms="7036" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="verifyResetPasswordWithExistingUserEmail()[pri:0, instance:testScripts.PasswordResetPageTest@6cf0e0ba]" started-at="2024-08-22T18:54:35 IST" name="verifyResetPasswordWithExistingUserEmail" finished-at="2024-08-22T18:54:38 IST" duration-ms="3509" status="PASS">
+        <test-method signature="verifyLoginWithNewlyAddedUser()[pri:0, instance:testScripts.CreateUsersPageTest@6cf0e0ba]" started-at="2024-08-24T09:09:05 IST" name="verifyLoginWithNewlyAddedUser" finished-at="2024-08-24T09:09:29 IST" duration-ms="24684" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyResetPasswordWithExistingUserEmail -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.PasswordResetPageTest@6cf0e0ba]" started-at="2024-08-22T18:54:38 IST" name="closeBrowser" finished-at="2024-08-22T18:54:39 IST" duration-ms="158" status="PASS">
+        </test-method> <!-- verifyLoginWithNewlyAddedUser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.CreateUsersPageTest@6cf0e0ba]" started-at="2024-08-24T09:09:29 IST" name="closeBrowser" finished-at="2024-08-24T09:09:29 IST" duration-ms="192" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testScripts.PasswordResetPageTest -->
+      </class> <!-- testScripts.CreateUsersPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
