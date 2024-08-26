@@ -20,6 +20,5 @@ public class RandomDataUtility {
 		faker = new Faker();
 		String lastName = faker.name().lastName();
 		return lastName;
-	}
-	
+	}	
 }

@@ -14,6 +14,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Constants;
+import constants.Messages;
 import pageObjects.CreateUsersPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
@@ -26,8 +28,8 @@ import utilities.RandomDataUtility;
 public class CreateUsersPageTest extends Base {
 	@Test
 	public void verifyAddNewUser() {
-		String userName = ExcelUtility.getStringData(0, 0, "LoginPage");
-		String password = ExcelUtility.getNumericData(0, 1, "LoginPage");
+		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
+		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGINPAGE);
 		String prefix = RandomDataUtility.getPrefix();
 		String fName = RandomDataUtility.getFirstName();
 		String lName = RandomDataUtility.getLastname();
@@ -38,13 +40,13 @@ public class CreateUsersPageTest extends Base {
 		String emailId = fName + "." + lName + "@yahoo.com";
 		String pwd = fName + "@" + lName;
 		String newUserName = fName + "." + lName;
-
+		
 		LoginPage login = new LoginPage(driver);
 		login.enterUserName(userName);
 		login.enterPassword(password);
-		HomePage home = login.clickLoginButton();
-		home.clickEndTour();
-		home.clickUserManagementMenu();
+		HomePage homepage = login.clickLoginButton();
+		homepage.clickEndTour();
+		homepage.clickUserManagementMenu();
 		UserManagementMenu usermanagement = new UserManagementMenu(driver);
 		UsersPage userspage = usermanagement.clickUsersMenu();
 		CreateUsersPage createusers = userspage.clickAddUserButton();
@@ -52,24 +54,18 @@ public class CreateUsersPageTest extends Base {
 		createusers.enterFirstName(fName);
 		createusers.enterLastName(lName);
 		createusers.enterEmailId(emailId);
-		// createusers.selectRole(expectedRole);
 		createusers.clickRoles();
 		PageUtility.selectOption(createusers.getRoleLists(), expectedRole);
-
 		createusers.enterUserName(newUserName);
 		createusers.enterPassword(pwd);
 		createusers.enterConfirmPassword(pwd);
 		createusers.enterSalesCommisions(commission);
 		createusers.clickAllowContactsCheckbox();
-		// createusers.selectContacts(expectedContact);
 		createusers.clickContacts();
 		PageUtility.selectOption(createusers.getContactLists(), expectedContact);
 		userspage = createusers.clickSaveButton();
-
 		userspage.enterSearchUserName(newUserName);
-
-		Assert.assertTrue(userspage.isNewlyCreatedUserPresent(emailId), "Newly created user is not added");
-
+		Assert.assertEquals(userspage.getuserEmailId(), emailId, Messages.USERADDFAILED);
 	}
 
 	@Test
@@ -101,7 +97,6 @@ public class CreateUsersPageTest extends Base {
 		// createusers.selectRole(expectedRole);
 		createusers.clickRoles();
 		PageUtility.selectOption(createusers.getRoleLists(), expectedRole);
-
 		createusers.enterUserName(newUserName);
 		createusers.enterPassword(newUserPassword);
 		createusers.enterConfirmPassword(newUserPassword);
@@ -111,16 +106,13 @@ public class CreateUsersPageTest extends Base {
 		createusers.clickContacts();
 		PageUtility.selectOption(createusers.getContactLists(), expectedContact);
 		createusers.clickSaveButton();
-
 		homepage.clickHomeMenu();
 		homepage.clickLoggedInUserName();
 		homepage.clickSignOutButton();
 		login.enterUserName(newUserName);
 		login.enterPassword(newUserPassword);
 		homepage = login.clickLoginButton();
-
 		String expectedUserName = fName + " " + lName;
 		Assert.assertEquals(homepage.getLoggedInUserName(), expectedUserName, "Invalid user login");
-
 	}
 }

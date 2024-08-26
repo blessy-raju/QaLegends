@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtility {
-	//WebDriver driver;
+	// WebDriver driver;
 	public static final long IMPLICITLYWAIT = 10;
 	public static final long EXPLICITLYWAIT = 10;
 
@@ -20,6 +20,11 @@ public class WaitUtility {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITLYWAIT));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
-	//fluentwait
+
+	public static void waitForAlertToBePresent(WebDriver driver) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITLYWAIT));
+		wait.until(ExpectedConditions.alertIsPresent());
+	}
+	// fluentwait
 
 }

@@ -7,6 +7,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import constants.Constants;
+
 public class ExcelUtility {
 	static FileInputStream file;
 	static XSSFWorkbook workbook;
@@ -14,8 +16,8 @@ public class ExcelUtility {
 
 	public static String getStringData(int rowNumber, int colNumber, String sheetName) {
 		try {
-
-			file = new FileInputStream("D:\\SeleniumAutomation\\QaLegends\\src\\test\\resources\\TestData.xlsx");
+			String path = Constants.HOME_DIRECTORY + Constants.TESTDATA_EXCELPATH;
+			file = new FileInputStream(path);
 			workbook = new XSSFWorkbook(file);
 			sheet = workbook.getSheet(sheetName);
 			XSSFRow row = sheet.getRow(rowNumber);
@@ -30,8 +32,8 @@ public class ExcelUtility {
 	public static String getNumericData(int rowNumber, int colNumber, String sheetName) {
 		try {
 
-			file = new FileInputStream("D:\\SeleniumAutomation\\QaLegends\\src\\test\\resources\\TestData.xlsx");
-			workbook = new XSSFWorkbook(file);
+			String path=Constants.HOME_DIRECTORY+Constants.TESTDATA_EXCELPATH;
+			file = new FileInputStream(path);
 			sheet = workbook.getSheet(sheetName);
 			XSSFRow row = sheet.getRow(rowNumber);
 			XSSFCell column = row.getCell(colNumber);

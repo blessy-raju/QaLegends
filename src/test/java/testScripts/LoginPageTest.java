@@ -17,7 +17,6 @@ public class LoginPageTest extends Base {
 		String userName = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getNumericData(0, 1, "LoginPage");
 		String expectedDropDownUserName = ExcelUtility.getStringData(2, 0, "LoginPage");
-
 		LoginPage login = new LoginPage(driver);
 		login.enterUserName(userName);
 		login.enterPassword(password);
@@ -34,6 +33,5 @@ public class LoginPageTest extends Base {
 		login.enterPassword(password);
 		String actualErrorMessage = login.getInvalidUserMessage();
 		Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Invalid error message");
-
 	}
 }

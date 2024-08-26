@@ -20,8 +20,16 @@ public class UsersPage {
 	WebElement addButton;
 	@FindBy(xpath = "//input[@type='search']")
 	WebElement searchText;
-	@FindBy(xpath = "//table[@id='users_table']")
-	WebElement userTable;
+	@FindBy(xpath = "//table[@id='users_table']//tr//td[4]")
+	WebElement userEmailId;
+	@FindBy(xpath = "//table[@id='users_table']//a[normalize-space()='View']")
+	WebElement viewButton;
+	@FindBy(xpath = "//table[@id='users_table']//button[normalize-space()='Delete']")
+	WebElement deleteButton;
+	@FindBy(xpath = "//table[@id='users_table']//td[@class='dataTables_empty']")
+	WebElement noRecords;
+	@FindBy(xpath = "//button[@class='swal-button swal-button--confirm swal-button--danger']")
+	WebElement deleteOkButton;
 
 	public CreateUsersPage clickAddUserButton() {
 		addButton.click();
@@ -29,24 +37,25 @@ public class UsersPage {
 	}
 
 	public void enterSearchUserName(String name) {
+		searchText.clear();
 		searchText.sendKeys(name);
 	}
 
-	public boolean isNewlyCreatedUserPresent(String email) {
-		String emailDisplayed = userTable.findElement(By.tagName("tr//td[4]")).getText();
-		if (emailDisplayed.equals(email))
-			return true;
-		else
-			return false;
+	public String getuserEmailId() {
+		return userEmailId.getText();
+	}
+
+	public void clickViewButton() {
+		viewButton.click();
+	}
+	public void clickDeleteButton() {
+		deleteButton.click();
+	}
+	public void clickDeleteOkButton() {
+		deleteOkButton.click();
+	}
+	public String getNoRecordsMessage() {
+		return noRecords.getText();
 	}
 
 }
-//int rowSize = rows.size();
-//for (int i = 0; i < rowSize; i++) {
-//	List<WebElement> columns = rows.get(i).findElements(By.tagName("td"));
-//	int columnSize = columns.size();
-//	for (int j = 0; j < columnSize; j++) {
-//		String cellData = columns.get(j).getText();
-//		if (cellData.equals("NIFTY BANK")) {
-//			System.out.println("Prev Close value is " + columns.get(1).getText());
-//		}

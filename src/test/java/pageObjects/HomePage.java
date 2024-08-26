@@ -21,8 +21,12 @@ public class HomePage {
 	WebElement homeMenu;
 	@FindBy(xpath = "//span[text()='User Management']")
 	WebElement userManagement;
+	@FindBy(xpath = "//span[normalize-space()='Contacts']")
+	WebElement contactsMenu;
 	@FindBy(xpath = "//div[@class='pull-right']//a")
 	WebElement signOutButton;
+	@FindBy(xpath = "//div[@class='pull-left']//a")
+	WebElement profileButton;
 
 	public String getLoggedInUserName() {
 		String userNameText = loggedInUserName.getText();
@@ -40,6 +44,9 @@ public class HomePage {
 	public void clickUserManagementMenu() {
 		userManagement.click();
 	}
+	public void clickContactsMenu() {
+		contactsMenu.click();
+	}
 
 	public void clickLoggedInUserName() {
 		loggedInUserName.click();
@@ -48,5 +55,10 @@ public class HomePage {
 	public void clickSignOutButton() {
 		signOutButton.click();
 	}
+	public UserProfilePage clickProfileButton() {
+		profileButton.click();
+		return new UserProfilePage(driver);
+	}
+	
 
 }

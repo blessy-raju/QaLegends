@@ -34,5 +34,4 @@ public class PasswordResetPageTest extends Base {
 		String actualMessage = resetpage.getEmailSentMessage();
 		Assert.assertEquals(actualMessage, expectedMessage, "Invalid message for existing user");
 	}
-
 }
