@@ -28,19 +28,18 @@ import utilities.RandomDataUtility;
 public class CreateUsersPageTest extends Base {
 	@Test
 	public void verifyAddNewUser() {
-		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGINPAGE);
-		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGINPAGE);
+		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
+		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
 		String prefix = RandomDataUtility.getPrefix();
 		String fName = RandomDataUtility.getFirstName();
 		String lName = RandomDataUtility.getLastname();
-		String expectedRole = ExcelUtility.getStringData(1, 0, "UserPage");
-		String commission = ExcelUtility.getNumericData(1, 1, "UserPage");
-		// String expectedSuccessMessage = ExcelUtility.getStringData(1, 2, "UserPage");
-		String expectedContact = ExcelUtility.getStringData(1, 3, "UserPage");
-		String emailId = fName + "." + lName + "@yahoo.com";
-		String pwd = fName + "@" + lName;
-		String newUserName = fName + "." + lName;
-		
+		String expectedRole = ExcelUtility.getStringData(1, 0, Constants.USER_PAGE);
+		String commission = ExcelUtility.getNumericData(1, 1, Constants.USER_PAGE);
+		String expectedContact = ExcelUtility.getStringData(1, 3, Constants.USER_PAGE);
+		String emailId = fName + Constants.SEPARATOR + lName + Constants.MAIL_SERVER;
+		String newUserPassword = fName + Constants.AT_SIGN + lName;
+		String newUserName = fName + Constants.SEPARATOR + lName;
+
 		LoginPage login = new LoginPage(driver);
 		login.enterUserName(userName);
 		login.enterPassword(password);
@@ -57,8 +56,8 @@ public class CreateUsersPageTest extends Base {
 		createusers.clickRoles();
 		PageUtility.selectOption(createusers.getRoleLists(), expectedRole);
 		createusers.enterUserName(newUserName);
-		createusers.enterPassword(pwd);
-		createusers.enterConfirmPassword(pwd);
+		createusers.enterPassword(newUserPassword);
+		createusers.enterConfirmPassword(newUserPassword);
 		createusers.enterSalesCommisions(commission);
 		createusers.clickAllowContactsCheckbox();
 		createusers.clickContacts();
@@ -70,17 +69,17 @@ public class CreateUsersPageTest extends Base {
 
 	@Test
 	public void verifyLoginWithNewlyAddedUser() {
-		String userName = ExcelUtility.getStringData(0, 0, "LoginPage");
-		String password = ExcelUtility.getNumericData(0, 1, "LoginPage");
+		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
+		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
 		String prefix = RandomDataUtility.getPrefix();
 		String fName = RandomDataUtility.getFirstName();
 		String lName = RandomDataUtility.getLastname();
-		String expectedRole = ExcelUtility.getStringData(1, 0, "UserPage");
-		String commission = ExcelUtility.getNumericData(1, 1, "UserPage");
-		String expectedContact = ExcelUtility.getStringData(1, 3, "UserPage");
-		String emailId = fName + "." + lName + "@yahoo.com";
-		String newUserPassword = fName + "@" + lName;
-		String newUserName = fName + "." + lName;
+		String expectedRole = ExcelUtility.getStringData(1, 0, Constants.USER_PAGE);
+		String commission = ExcelUtility.getNumericData(1, 1, Constants.USER_PAGE);
+		String expectedContact = ExcelUtility.getStringData(1, 3, Constants.USER_PAGE);
+		String emailId = fName + Constants.SEPARATOR + lName + Constants.MAIL_SERVER;
+		String newUserPassword = fName + Constants.AT_SIGN + lName;
+		String newUserName = fName + Constants.SEPARATOR + lName;
 		LoginPage login = new LoginPage(driver);
 		login.enterUserName(userName);
 		login.enterPassword(password);

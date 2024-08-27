@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Constants;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import pageObjects.UserProfilePage;
@@ -14,11 +15,11 @@ import utilities.RandomDataUtility;
 public class UserProfilePageTest extends Base {
 	@Test
 	public void verifyEditProfile() {
-		String userName = ExcelUtility.getStringData(0, 0, "LoginPage");
-		String password = ExcelUtility.getNumericData(0, 1, "LoginPage");
+		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
+		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
 		String fName = RandomDataUtility.getFirstName();
 		String lName = RandomDataUtility.getLastname();
-		String emailId = fName + "." + lName + "@yahoo.com";
+		String emailId = fName + Constants.SEPARATOR+ lName + Constants.MAIL_SERVER;
 		LoginPage login = new LoginPage(driver);
 		login.enterUserName(userName);
 		login.enterPassword(password);

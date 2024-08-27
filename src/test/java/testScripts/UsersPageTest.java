@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Constants;
 import pageObjects.CreateUsersPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
@@ -18,9 +19,9 @@ import utilities.WaitUtility;
 public class UsersPageTest extends Base {
 	@Test
 	public void verifyViewUser() {
-		String userName = ExcelUtility.getStringData(0, 0, "LoginPage");
-		String password = ExcelUtility.getNumericData(0, 1, "LoginPage");
-		String searchUser = ExcelUtility.getStringData(4, 0, "UserPage");
+		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
+		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
+		String searchUser = ExcelUtility.getStringData(4, 0, Constants.LOGIN_PAGE);
 		LoginPage login = new LoginPage(driver);
 		login.enterUserName(userName);
 		login.enterPassword(password);
@@ -35,18 +36,18 @@ public class UsersPageTest extends Base {
 
 	@Test
 	public void verifyDeleteUser() {
-		String userName = ExcelUtility.getStringData(0, 0, "LoginPage");
-		String password = ExcelUtility.getNumericData(0, 1, "LoginPage");
+		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
+		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
 		String prefix = RandomDataUtility.getPrefix();
 		String fName = RandomDataUtility.getFirstName();
 		String lName = RandomDataUtility.getLastname();
-		String role = ExcelUtility.getStringData(1, 0, "UserPage");
-		String commission = ExcelUtility.getNumericData(1, 1, "UserPage");
-		String contact = ExcelUtility.getStringData(1, 3, "UserPage");
-		String noRecordMessage = ExcelUtility.getStringData(7, 0, "UserPage");
-		String emailId = fName + "." + lName + "@yahoo.com";
-		String pwd = fName + "@" + lName;
-		String newUserName = fName + "." + lName;
+		String role = ExcelUtility.getStringData(1, 0, Constants.USER_PAGE);
+		String commission = ExcelUtility.getNumericData(1, 1, Constants.USER_PAGE);
+		String contact = ExcelUtility.getStringData(1, 3, Constants.USER_PAGE);
+		String noRecordMessage = ExcelUtility.getStringData(7, 0, Constants.USER_PAGE);
+		String emailId = fName + Constants.SEPARATOR+ lName + Constants.SEPARATOR;
+		String pwd = fName + Constants.AT_SIGN+ lName;
+		String newUserName = fName + Constants.SEPARATOR + lName;
 		LoginPage login = new LoginPage(driver);
 		login.enterUserName(userName);
 		login.enterPassword(password);
