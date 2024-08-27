@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import automationCore.Base;
 import constants.Constants;
+import constants.Messages;
 import pageObjects.LoginPage;
 import pageObjects.PasswordResetPage;
 import utilities.ExcelUtility;
@@ -21,7 +22,7 @@ public class PasswordResetPageTest extends Base {
 		resetpage.enterEmailAddress(userEmail);
 		resetpage.sendPasswordResetLink();
 		String actualMessage = resetpage.getEmailNotFoundMessage();
-		Assert.assertEquals(actualMessage, expectedMessage, "Invalid message for non existing user");
+		Assert.assertEquals(actualMessage, expectedMessage,Messages.RESET_FAILED );
 	}
 
 	@Test
@@ -33,6 +34,6 @@ public class PasswordResetPageTest extends Base {
 		resetpage.enterEmailAddress(userEmail);
 		resetpage.sendPasswordResetLink();
 		String actualMessage = resetpage.getEmailSentMessage();
-		Assert.assertEquals(actualMessage, expectedMessage, "Invalid message for existing user");
+		Assert.assertEquals(actualMessage, expectedMessage, Messages.RESET_SUCCESS );
 	}
 }

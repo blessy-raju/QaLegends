@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import automationCore.Base;
 import constants.Constants;
+import constants.Messages;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import pageObjects.UserProfilePage;
@@ -33,7 +34,7 @@ public class UserProfilePageTest extends Base {
 		homepage.clickLoggedInUserName(); 
 		userprofile = homepage.clickProfileButton();
 		String actualEmail =userprofile.getEmailAddress();
-		Assert.assertEquals(actualEmail, emailId,"Profile is not updated");
+		Assert.assertEquals(actualEmail, emailId, Messages.PROFILE_UPDATE_FAILED);
 	}
 
 }

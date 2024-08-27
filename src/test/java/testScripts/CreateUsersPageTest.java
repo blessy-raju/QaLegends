@@ -36,7 +36,7 @@ public class CreateUsersPageTest extends Base {
 		String expectedRole = ExcelUtility.getStringData(1, 0, Constants.USER_PAGE);
 		String commission = ExcelUtility.getNumericData(1, 1, Constants.USER_PAGE);
 		String expectedContact = ExcelUtility.getStringData(1, 3, Constants.USER_PAGE);
-		String emailId = fName + Constants.SEPARATOR + lName + Constants.MAIL_SERVER;
+		String emailId = fName + Constants.SEPARATOR + lName + Constants.AT_SIGN + Constants.MAIL_SERVER;
 		String newUserPassword = fName + Constants.AT_SIGN + lName;
 		String newUserName = fName + Constants.SEPARATOR + lName;
 
@@ -64,7 +64,7 @@ public class CreateUsersPageTest extends Base {
 		PageUtility.selectOption(createusers.getContactLists(), expectedContact);
 		userspage = createusers.clickSaveButton();
 		userspage.enterSearchUserName(newUserName);
-		Assert.assertEquals(userspage.getuserEmailId(), emailId, Messages.USERADDFAILED);
+		Assert.assertEquals(userspage.getuserEmailId(), emailId, Messages.USER_ADDED_FAILED);
 	}
 
 	@Test
@@ -77,7 +77,7 @@ public class CreateUsersPageTest extends Base {
 		String expectedRole = ExcelUtility.getStringData(1, 0, Constants.USER_PAGE);
 		String commission = ExcelUtility.getNumericData(1, 1, Constants.USER_PAGE);
 		String expectedContact = ExcelUtility.getStringData(1, 3, Constants.USER_PAGE);
-		String emailId = fName + Constants.SEPARATOR + lName + Constants.MAIL_SERVER;
+		String emailId = fName + Constants.SEPARATOR + lName + Constants.AT_SIGN + Constants.MAIL_SERVER;
 		String newUserPassword = fName + Constants.AT_SIGN + lName;
 		String newUserName = fName + Constants.SEPARATOR + lName;
 		LoginPage login = new LoginPage(driver);
@@ -101,7 +101,6 @@ public class CreateUsersPageTest extends Base {
 		createusers.enterConfirmPassword(newUserPassword);
 		createusers.enterSalesCommisions(commission);
 		createusers.clickAllowContactsCheckbox();
-		// createusers.selectContacts(expectedContact);
 		createusers.clickContacts();
 		PageUtility.selectOption(createusers.getContactLists(), expectedContact);
 		createusers.clickSaveButton();
@@ -112,6 +111,6 @@ public class CreateUsersPageTest extends Base {
 		login.enterPassword(newUserPassword);
 		homepage = login.clickLoginButton();
 		String expectedUserName = fName + " " + lName;
-		Assert.assertEquals(homepage.getLoggedInUserName(), expectedUserName, "Invalid user login");
+		Assert.assertEquals(homepage.getLoggedInUserName(), expectedUserName, Messages.INVALID_USER);
 	}
 }

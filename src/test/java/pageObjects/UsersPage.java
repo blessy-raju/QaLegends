@@ -1,5 +1,6 @@
 package pageObjects;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -7,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UsersPage {
 	WebDriver driver;
@@ -30,6 +33,8 @@ public class UsersPage {
 	WebElement noRecords;
 	@FindBy(xpath = "//button[@class='swal-button swal-button--confirm swal-button--danger']")
 	WebElement deleteOkButton;
+//	@FindBy(xpath = "//table[@id='users_table']//tr[@role='row']//td[4]")
+//	WebElement viewUserEmail;
 
 	public CreateUsersPage clickAddUserButton() {
 		addButton.click();
@@ -45,17 +50,20 @@ public class UsersPage {
 		return userEmailId.getText();
 	}
 
-	public void clickViewButton() {
+	public ViewUserDetailsPage clickViewButton() {
 		viewButton.click();
+		return new ViewUserDetailsPage(driver);
 	}
+
 	public void clickDeleteButton() {
 		deleteButton.click();
 	}
+
 	public void clickDeleteOkButton() {
 		deleteOkButton.click();
 	}
+
 	public String getNoRecordsMessage() {
 		return noRecords.getText();
 	}
-
 }

@@ -17,6 +17,8 @@ public class ImportContactsPage {
 	WebElement chooseFileButton;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement submitButton;
+	@FindBy(xpath = "//div[@class='toast-message']")
+	WebElement importSuccessMessage;
 
 	public void uploadFile() {
 		chooseFileButton.sendKeys("D:\\SeleniumAutomation\\QaLegends\\src\\main\\resources\\Files\\Contacts.csv");
@@ -24,6 +26,9 @@ public class ImportContactsPage {
 
 	public void clickSubmitButton() {
 		submitButton.click();
+	}
+	public String getImportSuccessMessage() {
+		return importSuccessMessage.getText();
 	}
 
 }
