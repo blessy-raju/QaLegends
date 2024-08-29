@@ -42,8 +42,8 @@ public class Base {
 			System.out.println("Invalid browser name");
 		}
 		driver.manage().window().maximize();
-		//driver.get(property.getProperty(browserName));
-		driver.get("https://qalegend.com/billing/public/login");
+		driver.get(property.getProperty("url"));
+		//driver.get("https://qalegend.com/billing/public/login");
 		WaitUtility.waitForAnElement(driver);
 	}
 
