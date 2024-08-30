@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import constants.Constants;
+
 public class ImportContactsPage {
 	WebDriver driver;
 
@@ -21,12 +23,13 @@ public class ImportContactsPage {
 	WebElement importSuccessMessage;
 
 	public void uploadFile() {
-		chooseFileButton.sendKeys("D:\\SeleniumAutomation\\QaLegends\\src\\main\\resources\\Files\\Contacts.csv");
+		chooseFileButton.sendKeys(Constants.HOME_DIRECTORY + Constants.IMPORT_CONTACTS_FILEPATH);
 	}
 
 	public void clickSubmitButton() {
 		submitButton.click();
 	}
+
 	public String getImportSuccessMessage() {
 		return importSuccessMessage.getText();
 	}

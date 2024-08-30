@@ -26,7 +26,7 @@ import utilities.PageUtility;
 import utilities.RandomDataUtility;
 
 public class CreateUsersPageTest extends Base {
-	@Test
+	@Test(groups="Smoke")
 	public void verifyAddNewUser() {
 		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);

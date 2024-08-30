@@ -4,6 +4,7 @@ import java.io.File;
 
 public class Constants {
 	public static final String TESTDATA_EXCELPATH = "\\src\\test\\resources\\TestData.xlsx";
+	public static final String IMPORT_CONTACTS_FILEPATH = "\\src\\main\\resources\\Files\\Contacts.csv";	
 	public static final String CONFIG_FILE = System.getProperty("user.dir") + File.separator + "src" + File.separator
 			+ "main" + File.separator + "resources" + File.separator + "config.properties";
 	public static final String HOME_DIRECTORY = System.getProperty("user.dir");

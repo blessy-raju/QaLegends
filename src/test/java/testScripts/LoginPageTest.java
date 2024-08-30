@@ -14,7 +14,7 @@ import pageObjects.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base {
-	@Test
+	@Test(groups="Smoke")
 	public void verifyValidUserLogin() {
 		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);

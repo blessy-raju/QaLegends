@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="listeners.ExtendListeners"/>
-  </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="HomeUserAndProfileTest(failed)">
+    <parameter name="browser" value="Firefox"/>
     <classes>
-      <class name="testScripts.LoginPageTest">
-        <methods>
-          <include name="verifyValidUserLogin"/>
-          <include name="closeBrowser"/>
-          <include name="setBrowser"/>
-          <include name="verifyUserLoginWithInvalidCredentials"/>
-        </methods>
-      </class> <!-- testScripts.LoginPageTest -->
-      <class name="testScripts.HomePageTest">
+      <class name="testScripts.UserProfilePageTest">
         <methods>
           <include name="closeBrowser"/>
+          <include name="verifyEditProfile"/>
           <include name="setBrowser"/>
-          <include name="verifyUserLoginDate"/>
         </methods>
-      </class> <!-- testScripts.HomePageTest -->
+      </class> <!-- testScripts.UserProfilePageTest -->
+      <class name="testScripts.UsersPageTest">
+        <methods>
+          <include name="verifyDeleteUser"/>
+          <include name="closeBrowser"/>
+          <include name="setBrowser"/>
+        </methods>
+      </class> <!-- testScripts.UsersPageTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- HomeUserAndProfileTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

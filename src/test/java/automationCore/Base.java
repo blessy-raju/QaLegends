@@ -48,16 +48,16 @@ public class Base {
 		WaitUtility.waitForAnElement(driver);
 	}
 
-	@BeforeMethod
-	@Parameters("browser")
-	public void setBrowser(String browserName) {
-		initializeBrowser(browserName);
-	}
-
 //	@BeforeMethod
-//	public void setBrowser() {
-//		initializeBrowser("Chrome");
+//	@Parameters("browser")
+//	public void setBrowser(String browserName) {
+//		initializeBrowser(browserName);
 //	}
+
+	@BeforeMethod
+	public void setBrowser() {
+		initializeBrowser("Chrome");
+	}
 	
 	@AfterMethod
 	public void closeBrowser() {

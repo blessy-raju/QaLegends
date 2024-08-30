@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="LoginResetTest">
+		<parameter name="browser" value="Chrome"></parameter>
+		<classes>
+			<class name="testScripts.LoginPageTest" />
+			<class name="testScripts.PasswordResetPageTest" />
+		</classes>
+	</test>
+
+	<test name="HomeUserAndProfileTest">
+		<parameter name="browser" value="Firefox"></parameter>
+		<classes>
+			<class name="testScripts.HomePageTest" />
+			<class name="testScripts.UsersPageTest" />
+			<class name="testScripts.UserProfilePageTest" />
+		</classes>
+	</test>
+
+	<test name="CreateImportContactTest">
+		<parameter name="browser" value="Edge"></parameter>
+		<classes>
+			<class name="testScripts.CreateUsersPageTest" />
+			<class name="testScripts.ImportContactsPageTest" />
+		</classes>
+	</test>
+</suite> 
