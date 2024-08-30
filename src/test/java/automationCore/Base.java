@@ -11,6 +11,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import constants.Constants;
 import utilities.WaitUtility;
@@ -43,15 +44,21 @@ public class Base {
 		}
 		driver.manage().window().maximize();
 		driver.get(property.getProperty("url"));
-		//driver.get("https://qalegend.com/billing/public/login");
+		// driver.get("https://qalegend.com/billing/public/login");
 		WaitUtility.waitForAnElement(driver);
 	}
 
 	@BeforeMethod
-	public void setBrowser() {
-		initializeBrowser("Chrome");
+	@Parameters("browser")
+	public void setBrowser(String browserName) {
+		initializeBrowser(browserName);
 	}
 
+//	@BeforeMethod
+//	public void setBrowser() {
+//		initializeBrowser("Chrome");
+//	}
+	
 	@AfterMethod
 	public void closeBrowser() {
 		driver.close();

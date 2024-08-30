@@ -2,30 +2,44 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-29T19:35:04 IST" name="Suite" finished-at="2024-08-29T19:35:53 IST" duration-ms="48801">
+  <suite started-at="2024-08-30T14:23:33 IST" name="Suite" finished-at="2024-08-30T14:24:42 IST" duration-ms="68310">
     <groups>
     </groups>
-    <test started-at="2024-08-29T19:35:04 IST" name="Test" finished-at="2024-08-29T19:35:53 IST" duration-ms="48801">
+    <test started-at="2024-08-30T14:23:33 IST" name="Test" finished-at="2024-08-30T14:24:42 IST" duration-ms="68310">
       <class name="testScripts.HomePageTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScripts.HomePageTest@55183b20]" started-at="2024-08-29T19:35:04 IST" name="setBrowser" finished-at="2024-08-29T19:35:11 IST" duration-ms="7367" status="PASS">
+        <test-method is-config="true" signature="setBrowser(java.lang.String)[pri:0, instance:testScripts.HomePageTest@7fee8714]" started-at="2024-08-30T14:23:33 IST" name="setBrowser" finished-at="2024-08-30T14:23:47 IST" duration-ms="13649" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="verifyUserLoginDate()[pri:0, instance:testScripts.HomePageTest@55183b20]" started-at="2024-08-29T19:35:11 IST" name="verifyUserLoginDate" finished-at="2024-08-29T19:35:15 IST" duration-ms="3819" status="PASS">
+        <test-method signature="verifyUserLoginDate()[pri:0, instance:testScripts.HomePageTest@7fee8714]" started-at="2024-08-30T14:23:47 IST" name="verifyUserLoginDate" finished-at="2024-08-30T14:23:51 IST" duration-ms="4552" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserLoginDate -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.HomePageTest@55183b20]" started-at="2024-08-29T19:35:15 IST" name="closeBrowser" finished-at="2024-08-29T19:35:16 IST" duration-ms="504" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.HomePageTest@7fee8714]" started-at="2024-08-30T14:23:51 IST" name="closeBrowser" finished-at="2024-08-30T14:23:52 IST" duration-ms="80" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- testScripts.HomePageTest -->
       <class name="testScripts.LoginPageTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:16 IST" name="setBrowser" finished-at="2024-08-29T19:35:23 IST" duration-ms="7294" status="PASS">
+        <test-method is-config="true" signature="setBrowser(java.lang.String)[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:23:52 IST" name="setBrowser" finished-at="2024-08-30T14:24:05 IST" duration-ms="13179" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="verifyUserLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:23 IST" name="verifyUserLoginWithInvalidCredentials" data-provider="invalidUserData" finished-at="2024-08-29T19:35:24 IST" duration-ms="1197" status="PASS">
+        <test-method signature="verifyUserLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:24:05 IST" name="verifyUserLoginWithInvalidCredentials" data-provider="invalidUserData" finished-at="2024-08-30T14:24:06 IST" duration-ms="1540" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,15 +55,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserLoginWithInvalidCredentials -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:24 IST" name="closeBrowser" finished-at="2024-08-29T19:35:24 IST" duration-ms="355" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:24:06 IST" name="closeBrowser" finished-at="2024-08-30T14:24:06 IST" duration-ms="187" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:24 IST" name="setBrowser" finished-at="2024-08-29T19:35:33 IST" duration-ms="8132" status="PASS">
+        <test-method is-config="true" signature="setBrowser(java.lang.String)[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:24:06 IST" name="setBrowser" finished-at="2024-08-30T14:24:24 IST" duration-ms="17321" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="verifyUserLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:33 IST" name="verifyUserLoginWithInvalidCredentials" data-provider="invalidUserData" finished-at="2024-08-29T19:35:34 IST" duration-ms="1667" status="PASS">
+        <test-method signature="verifyUserLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:24:24 IST" name="verifyUserLoginWithInvalidCredentials" data-provider="invalidUserData" finished-at="2024-08-30T14:24:25 IST" duration-ms="1505" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -65,15 +86,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserLoginWithInvalidCredentials -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:34 IST" name="closeBrowser" finished-at="2024-08-29T19:35:35 IST" duration-ms="455" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:24:25 IST" name="closeBrowser" finished-at="2024-08-30T14:24:25 IST" duration-ms="183" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:35 IST" name="setBrowser" finished-at="2024-08-29T19:35:40 IST" duration-ms="5204" status="PASS">
+        <test-method is-config="true" signature="setBrowser(java.lang.String)[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:24:25 IST" name="setBrowser" finished-at="2024-08-30T14:24:31 IST" duration-ms="5838" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="verifyUserLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:40 IST" name="verifyUserLoginWithInvalidCredentials" data-provider="invalidUserData" finished-at="2024-08-29T19:35:41 IST" duration-ms="1150" status="PASS">
+        <test-method signature="verifyUserLoginWithInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:24:31 IST" name="verifyUserLoginWithInvalidCredentials" data-provider="invalidUserData" finished-at="2024-08-30T14:24:32 IST" duration-ms="948" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -89,19 +117,26 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserLoginWithInvalidCredentials -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:41 IST" name="closeBrowser" finished-at="2024-08-29T19:35:41 IST" duration-ms="299" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:24:32 IST" name="closeBrowser" finished-at="2024-08-30T14:24:32 IST" duration-ms="112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:41 IST" name="setBrowser" finished-at="2024-08-29T19:35:49 IST" duration-ms="7769" status="PASS">
+        <test-method is-config="true" signature="setBrowser(java.lang.String)[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:24:32 IST" name="setBrowser" finished-at="2024-08-30T14:24:38 IST" duration-ms="5746" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="verifyValidUserLogin()[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:49 IST" name="verifyValidUserLogin" finished-at="2024-08-29T19:35:52 IST" duration-ms="2901" status="PASS">
+        <test-method signature="verifyValidUserLogin()[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:24:38 IST" name="verifyValidUserLogin" finished-at="2024-08-30T14:24:41 IST" duration-ms="3266" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyValidUserLogin -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.LoginPageTest@397fbdb]" started-at="2024-08-29T19:35:52 IST" name="closeBrowser" finished-at="2024-08-29T19:35:53 IST" duration-ms="600" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.LoginPageTest@5b03b9fe]" started-at="2024-08-30T14:24:41 IST" name="closeBrowser" finished-at="2024-08-30T14:24:42 IST" duration-ms="118" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
