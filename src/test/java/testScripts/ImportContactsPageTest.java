@@ -24,8 +24,7 @@ public class ImportContactsPageTest extends Base {
 		login.enterPassword(password);
 		HomePage homepage = login.clickLoginButton();
 		homepage.clickEndTour();
-		homepage.clickContactsMenu();
-		ContactsMenu contactsmenu = new ContactsMenu(driver);
+		ContactsMenu contactsmenu = homepage.clickContactsMenu();
 		ImportContactsPage importcontacts = contactsmenu.clickImportContacts();
 		importcontacts.uploadFile();
 		importcontacts.clickSubmitButton();

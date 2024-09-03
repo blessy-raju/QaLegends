@@ -45,8 +45,7 @@ public class CreateUsersPageTest extends Base {
 		login.enterPassword(password);
 		HomePage homepage = login.clickLoginButton();
 		homepage.clickEndTour();
-		homepage.clickUserManagementMenu();
-		UserManagementMenu usermanagement = new UserManagementMenu(driver);
+		UserManagementMenu usermanagement = homepage.clickUserManagementMenu();
 		UsersPage userspage = usermanagement.clickUsersMenu();
 		CreateUsersPage createusers = userspage.clickAddUserButton();
 		createusers.enterSurName(prefix);
@@ -85,15 +84,13 @@ public class CreateUsersPageTest extends Base {
 		login.enterPassword(password);
 		HomePage homepage = login.clickLoginButton();
 		homepage.clickEndTour();
-		homepage.clickUserManagementMenu();
-		UserManagementMenu usermanagement = new UserManagementMenu(driver);
+		UserManagementMenu usermanagement = homepage.clickUserManagementMenu();
 		UsersPage userspage = usermanagement.clickUsersMenu();
 		CreateUsersPage createusers = userspage.clickAddUserButton();
 		createusers.enterSurName(prefix);
 		createusers.enterFirstName(fName);
 		createusers.enterLastName(lName);
 		createusers.enterEmailId(emailId);
-		// createusers.selectRole(expectedRole);
 		createusers.clickRoles();
 		PageUtility.selectOption(createusers.getRoleLists(), expectedRole);
 		createusers.enterUserName(newUserName);

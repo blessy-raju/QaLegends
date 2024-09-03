@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import constants.Constants;
+import utilities.PageUtility;
 
 public class ImportContactsPage {
 	WebDriver driver;
@@ -23,7 +24,7 @@ public class ImportContactsPage {
 	WebElement importSuccessMessage;
 
 	public void uploadFile() {
-		chooseFileButton.sendKeys(Constants.HOME_DIRECTORY + Constants.IMPORT_CONTACTS_FILEPATH);
+		PageUtility.fileUpload(chooseFileButton);
 	}
 
 	public void clickSubmitButton() {

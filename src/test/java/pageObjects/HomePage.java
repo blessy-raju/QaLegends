@@ -45,11 +45,17 @@ public class HomePage {
 		homeMenu.click();
 	}
 
-	public void clickUserManagementMenu() {
+	public UserManagementMenu clickUserManagementMenu() {
 		userManagement.click();
+		return new UserManagementMenu(driver);
 	}
-	public void clickContactsMenu() {
+
+//	public void clickUserManagementMenu() {
+//		userManagement.click();
+//	}
+	public ContactsMenu clickContactsMenu() {
 		contactsMenu.click();
+		return new ContactsMenu(driver);
 	}
 
 	public void clickLoggedInUserName() {
@@ -59,13 +65,16 @@ public class HomePage {
 	public void clickSignOutButton() {
 		signOutButton.click();
 	}
+
 	public UserProfilePage clickProfileButton() {
 		profileButton.click();
 		return new UserProfilePage(driver);
 	}
+
 	public String getLoginDate() {
 		return loginDate.getText();
 	}
+
 	public String getCurrentDate() {
 		return DateUtility.getUserLoginDate("dd-MM-YYYY");
 	}

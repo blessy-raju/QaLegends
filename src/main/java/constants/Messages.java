@@ -9,4 +9,5 @@ public class Messages {
 	public static final String PROFILE_UPDATE_FAILED = "Profile updated message is not displayed";
 	public static final String VIEW_USER_FAILED = "Emails doesn't match";
 	public static final String DELETE_USER_FAILED = "User is not deleted";
+	public static final String LOGIN_DATE_MISMATCH = "Date Mismatch";
 }

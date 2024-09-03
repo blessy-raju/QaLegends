@@ -27,8 +27,7 @@ public class UsersPageTest extends Base {
 		login.enterPassword(password);
 		HomePage homepage = login.clickLoginButton();
 		homepage.clickEndTour();
-		homepage.clickUserManagementMenu();
-		UserManagementMenu usermanagement = new UserManagementMenu(driver);
+		UserManagementMenu usermanagement = homepage.clickUserManagementMenu();
 		UsersPage userspage = usermanagement.clickUsersMenu();
 		userspage.enterSearchUserName(searchUser);
 		String userPageEmail = userspage.getuserEmailId();
@@ -56,8 +55,7 @@ public class UsersPageTest extends Base {
 		login.enterPassword(password);
 		HomePage homepage = login.clickLoginButton();
 		homepage.clickEndTour();
-		homepage.clickUserManagementMenu();
-		UserManagementMenu usermanagement = new UserManagementMenu(driver);
+		UserManagementMenu usermanagement = homepage.clickUserManagementMenu();
 		UsersPage userspage = usermanagement.clickUsersMenu();
 		CreateUsersPage createusers = userspage.clickAddUserButton();
 		createusers.enterSurName(prefix);
