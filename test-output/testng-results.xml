@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-03T12:09:56 IST" name="Default suite" finished-at="2024-09-03T12:10:23 IST" duration-ms="26295">
+  <suite started-at="2024-09-03T15:19:39 IST" name="Default suite" finished-at="2024-09-03T15:19:49 IST" duration-ms="9745">
     <groups>
     </groups>
-    <test started-at="2024-09-03T12:09:56 IST" name="Default test" finished-at="2024-09-03T12:10:23 IST" duration-ms="26295">
-      <class name="testScripts.UserProfilePageTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScripts.UserProfilePageTest@35d019a3]" started-at="2024-09-03T12:09:56 IST" name="setBrowser" finished-at="2024-09-03T12:10:12 IST" duration-ms="15936" status="PASS">
+    <test started-at="2024-09-03T15:19:39 IST" name="Default test" finished-at="2024-09-03T15:19:49 IST" duration-ms="9745">
+      <class name="testScripts.HomePageTest">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScripts.HomePageTest@35d019a3]" started-at="2024-09-03T15:19:39 IST" name="setBrowser" finished-at="2024-09-03T15:19:45 IST" duration-ms="5352" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="verifyEditProfile()[pri:0, instance:testScripts.UserProfilePageTest@35d019a3]" started-at="2024-09-03T12:10:12 IST" name="verifyEditProfile" finished-at="2024-09-03T12:10:22 IST" duration-ms="9893" status="PASS">
+        <test-method signature="verifyUserLoginDate()[pri:0, instance:testScripts.HomePageTest@35d019a3]" started-at="2024-09-03T15:19:45 IST" name="verifyUserLoginDate" finished-at="2024-09-03T15:19:49 IST" duration-ms="3972" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyEditProfile -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.UserProfilePageTest@35d019a3]" started-at="2024-09-03T12:10:22 IST" name="closeBrowser" finished-at="2024-09-03T12:10:23 IST" duration-ms="411" status="PASS">
+        </test-method> <!-- verifyUserLoginDate -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.HomePageTest@35d019a3]" started-at="2024-09-03T15:19:49 IST" name="closeBrowser" finished-at="2024-09-03T15:19:49 IST" duration-ms="372" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testScripts.UserProfilePageTest -->
+      </class> <!-- testScripts.HomePageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

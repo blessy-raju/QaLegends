@@ -1,14 +1,19 @@
 package automationCore;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -28,11 +33,13 @@ public class Base {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+
 		try {
 			property.load(file);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 		if (browserName.equals("Chrome")) {
 			driver = new ChromeDriver();
 		} else if (browserName.equals("Firefox")) {
@@ -58,10 +65,22 @@ public class Base {
 	public void setBrowser() {
 		initializeBrowser("Chrome");
 	}
-	
+
 	@AfterMethod
-	public void closeBrowser() {
+	public void closeBrowser(ITestResult result) {
+		if (result.getStatus() == ITestResult.FAILURE) {
+			takeScreenshot(result);
+		}
 		driver.close();
 	}
 
+	public void takeScreenshot(ITestResult result) {
+		TakesScreenshot takesscreenshot = (TakesScreenshot) driver;
+		File screenshot = takesscreenshot.getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(screenshot, new File("./Screenshots/" + result.getName() + ".png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

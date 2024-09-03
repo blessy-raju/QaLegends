@@ -8,8 +8,7 @@
 		</run>
 	</groups>
 	<listeners>
-		<!-- <listener
-		class-name="listeners.AnnotationTransformer"></listener>-->
+		<listener class-name="listeners.AnnotationTransformer"></listener>
 		<listener class-name="listeners.ExtendListeners"></listener>
 	</listeners>
 

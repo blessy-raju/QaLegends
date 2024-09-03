@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="HomeUserAndProfileTest(failed)">
-    <parameter name="browser" value="Firefox"/>
+  <listeners>
+    <listener class-name="listeners.AnnotationTransformer"/>
+    <listener class-name="listeners.ExtendListeners"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="testScripts.UserProfilePageTest">
+      <class name="testScripts.HomePageTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="verifyEditProfile"/>
           <include name="setBrowser"/>
+          <include name="verifyUserLoginDate"/>
         </methods>
-      </class> <!-- testScripts.UserProfilePageTest -->
-      <class name="testScripts.UsersPageTest">
-        <methods>
-          <include name="verifyDeleteUser"/>
-          <include name="closeBrowser"/>
-          <include name="setBrowser"/>
-        </methods>
-      </class> <!-- testScripts.UsersPageTest -->
+      </class> <!-- testScripts.HomePageTest -->
     </classes>
-  </test> <!-- HomeUserAndProfileTest(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

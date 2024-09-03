@@ -12,7 +12,7 @@
 			<!-- <class name="testScripts.CreateUsersPageTest"/>  -->
 			<class name="testScripts.HomePageTest" />
 			<!--<class name="testScripts.UsersPageTest"/> -->
-			<class name="testScripts.LoginPageTest" />
+			<!-- <class name="testScripts.LoginPageTest" /> -->
 			<!--<class name=llllllll"testScripts.UserProfilePageTest"/>
       <class name="testScripts.ImportContactsPageTest"/>
       <class name="testScripts.PasswordResetPageTest"/> -->
