@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-30T16:24:38 IST" name="Default suite" finished-at="2024-08-30T16:24:57 IST" duration-ms="19095">
+  <suite started-at="2024-09-03T12:09:56 IST" name="Default suite" finished-at="2024-09-03T12:10:23 IST" duration-ms="26295">
     <groups>
     </groups>
-    <test started-at="2024-08-30T16:24:38 IST" name="Default test" finished-at="2024-08-30T16:24:57 IST" duration-ms="19095">
-      <class name="testScripts.ImportContactsPageTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScripts.ImportContactsPageTest@35d019a3]" started-at="2024-08-30T16:24:38 IST" name="setBrowser" finished-at="2024-08-30T16:24:47 IST" duration-ms="8672" status="PASS">
+    <test started-at="2024-09-03T12:09:56 IST" name="Default test" finished-at="2024-09-03T12:10:23 IST" duration-ms="26295">
+      <class name="testScripts.UserProfilePageTest">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testScripts.UserProfilePageTest@35d019a3]" started-at="2024-09-03T12:09:56 IST" name="setBrowser" finished-at="2024-09-03T12:10:12 IST" duration-ms="15936" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="verifyImportCustomerContacts()[pri:0, instance:testScripts.ImportContactsPageTest@35d019a3]" started-at="2024-08-30T16:24:47 IST" name="verifyImportCustomerContacts" finished-at="2024-08-30T16:24:57 IST" duration-ms="10197" status="PASS">
+        <test-method signature="verifyEditProfile()[pri:0, instance:testScripts.UserProfilePageTest@35d019a3]" started-at="2024-09-03T12:10:12 IST" name="verifyEditProfile" finished-at="2024-09-03T12:10:22 IST" duration-ms="9893" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyImportCustomerContacts -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.ImportContactsPageTest@35d019a3]" started-at="2024-08-30T16:24:57 IST" name="closeBrowser" finished-at="2024-08-30T16:24:57 IST" duration-ms="165" status="PASS">
+        </test-method> <!-- verifyEditProfile -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testScripts.UserProfilePageTest@35d019a3]" started-at="2024-09-03T12:10:22 IST" name="closeBrowser" finished-at="2024-09-03T12:10:23 IST" duration-ms="411" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testScripts.ImportContactsPageTest -->
+      </class> <!-- testScripts.UserProfilePageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

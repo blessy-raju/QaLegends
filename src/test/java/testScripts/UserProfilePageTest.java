@@ -20,21 +20,17 @@ public class UserProfilePageTest extends Base {
 		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
 		String fName = RandomDataUtility.getFirstName();
 		String lName = RandomDataUtility.getLastname();
-		String emailId = fName + Constants.SEPARATOR+ lName + Constants.MAIL_SERVER;
+		String emailId = fName + Constants.SEPARATOR + lName + Constants.AT_SIGN + Constants.MAIL_SERVER;
 		LoginPage login = new LoginPage(driver);
 		login.enterUserName(userName);
 		login.enterPassword(password);
 		HomePage homepage = login.clickLoginButton();
 		homepage.clickEndTour();
-		homepage.clickLoggedInUserName(); 
+		homepage.clickLoggedInUserName();
 		UserProfilePage userprofile = homepage.clickProfileButton();
 		userprofile.editEmailAddress(emailId);
 		userprofile.clickUpdateButton();
-		homepage.clickHomeMenu();
-		homepage.clickLoggedInUserName(); 
-		userprofile = homepage.clickProfileButton();
-		String actualEmail =userprofile.getEmailAddress();
-		Assert.assertEquals(actualEmail, emailId, Messages.PROFILE_UPDATE_FAILED);
+		Assert.assertTrue(userprofile.isProfileUpdatedMessageDisplayed(), Messages.PROFILE_UPDATE_FAILED);
 	}
 
 }

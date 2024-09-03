@@ -1,6 +1,5 @@
 package testScripts;
 
-import org.openqa.selenium.Alert;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +15,6 @@ import pageObjects.ViewUserDetailsPage;
 import utilities.ExcelUtility;
 import utilities.PageUtility;
 import utilities.RandomDataUtility;
-import utilities.WaitUtility;
 
 public class UsersPageTest extends Base {
 	@Test

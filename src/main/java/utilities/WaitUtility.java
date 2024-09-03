@@ -1,10 +1,12 @@
 package utilities;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtility {
@@ -25,6 +27,13 @@ public class WaitUtility {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITLYWAIT));
 		wait.until(ExpectedConditions.alertIsPresent());
 	}
-	// fluentwait
+
+//	public static void waitForPollingInterval(WebDriver driver) {
+//		FluentWait fluentWait = new FluentWait(driver);
+//		fluentWait.withTimeout(Duration.ofSeconds(10));
+//		fluentWait.pollingEvery(Duration.ofSeconds(2));
+//		fluentWait.ignoring(NoSuchElementException.class);
+//		fluentWait.until(ExpectedConditions.alertIsPresent());
+//	}
 
 }

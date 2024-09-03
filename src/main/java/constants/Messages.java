@@ -6,7 +6,7 @@ public class Messages {
 	public static final String IMPORT_FAILED = "Contacts file import failed";
 	public static final String RESET_FAILED = "Invalid message for non existing user";
 	public static final String RESET_SUCCESS = "Invalid message for existing user";
-	public static final String PROFILE_UPDATE_FAILED = "User profile is not updated";
+	public static final String PROFILE_UPDATE_FAILED = "Profile updated message is not displayed";
 	public static final String VIEW_USER_FAILED = "Emails doesn't match";
 	public static final String DELETE_USER_FAILED = "User is not deleted";
 }

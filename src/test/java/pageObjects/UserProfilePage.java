@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WebElementUtility;
+
 public class UserProfilePage {
 	WebDriver driver;
 
@@ -16,6 +18,8 @@ public class UserProfilePage {
 	WebElement userEmail;
 	@FindBy(xpath="//button[@type='submit']")
 	WebElement updateButton;
+	@FindBy(xpath="//div[@class='toast-message']")
+	WebElement updateMessage;	
 	
 	public void editEmailAddress(String emailId) {
 		userEmail.clear();
@@ -24,9 +28,9 @@ public class UserProfilePage {
 	public void clickUpdateButton() {
 		updateButton.click();
 	}
-	public String getEmailAddress() {
-		return userEmail.getText();
+
+	public boolean isProfileUpdatedMessageDisplayed() {
+		return WebElementUtility.isElementDisplayed(updateMessage);
 		
 	}
-	
 }
