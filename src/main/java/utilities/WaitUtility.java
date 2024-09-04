@@ -28,12 +28,11 @@ public class WaitUtility {
 		wait.until(ExpectedConditions.alertIsPresent());
 	}
 
-//	public static void waitForPollingInterval(WebDriver driver) {
-//		FluentWait fluentWait = new FluentWait(driver);
-//		fluentWait.withTimeout(Duration.ofSeconds(10));
-//		fluentWait.pollingEvery(Duration.ofSeconds(2));
-//		fluentWait.ignoring(NoSuchElementException.class);
-//		fluentWait.until(ExpectedConditions.alertIsPresent());
-//	}
-
+	public static void waitForPollingInterval(WebDriver driver) {
+		FluentWait fluentWait = new FluentWait(driver);
+		fluentWait.withTimeout(Duration.ofSeconds(10));
+		fluentWait.pollingEvery(Duration.ofSeconds(2));
+		fluentWait.ignoring(NoSuchElementException.class);
+		fluentWait.until(ExpectedConditions.alertIsPresent());
+	}
 }
