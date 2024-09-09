@@ -51,19 +51,13 @@ public class Base {
 		}
 		driver.manage().window().maximize();
 		driver.get(property.getProperty("url"));
-		// driver.get("https://qalegend.com/billing/public/login");
 		WaitUtility.waitForAnElement(driver);
 	}
 
-//	@BeforeMethod
-//	@Parameters("browser")
-//	public void setBrowser(String browserName) {
-//		initializeBrowser(browserName);
-//	}
-
 	@BeforeMethod
-	public void setBrowser() {
-		initializeBrowser("Chrome");
+	@Parameters("browser")
+	public void setBrowser(String browserName) {
+		initializeBrowser(browserName);
 	}
 
 	@AfterMethod
