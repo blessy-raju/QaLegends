@@ -15,7 +15,7 @@ public class HomePageTest extends Base {
 	@Test
 	public void verifyUserLoginDate() {
 		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
-		String password = ExcelUtility.getNumericData(0, 2, Constants.LOGIN_PAGE);
+		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
 		LoginPage login = new LoginPage(driver);
 		login.enterUserName(userName);
 		login.enterPassword(password);
