@@ -13,6 +13,8 @@ public class WaitUtility {
 
 	public static final long IMPLICITLYWAIT = 10;
 	public static final long EXPLICITLYWAIT = 10;
+	public static final long TIMEOUT = 10;
+	public static final long POLLINGTIME = 2;
 
 	public static void waitForAnElement(WebDriver driver) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICITLYWAIT));
@@ -34,8 +36,8 @@ public class WaitUtility {
 
 	public static void waitForPollingInterval(WebDriver driver) {
 		FluentWait fluentWait = new FluentWait(driver);
-		fluentWait.withTimeout(Duration.ofSeconds(10));
-		fluentWait.pollingEvery(Duration.ofSeconds(2));
+		fluentWait.withTimeout(Duration.ofSeconds(TIMEOUT));
+		fluentWait.pollingEvery(Duration.ofSeconds(POLLINGTIME));
 		fluentWait.ignoring(NoSuchElementException.class);
 		fluentWait.until(ExpectedConditions.alertIsPresent());
 	}
