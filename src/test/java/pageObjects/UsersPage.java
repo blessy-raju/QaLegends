@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utilities.WaitUtility;
+
 public class UsersPage {
 	WebDriver driver;
 
@@ -33,8 +35,8 @@ public class UsersPage {
 	WebElement noRecords;
 	@FindBy(xpath = "//button[@class='swal-button swal-button--confirm swal-button--danger']")
 	WebElement deleteOkButton;
-//	@FindBy(xpath = "//table[@id='users_table']//tr[@role='row']//td[4]")
-//	WebElement viewUserEmail;
+	@FindBy(xpath = "//div[@class='toast-message']")
+	WebElement deleteMessage;
 
 	public CreateUsersPage clickAddUserButton() {
 		addButton.click();
@@ -61,6 +63,7 @@ public class UsersPage {
 
 	public void clickDeleteOkButton() {
 		deleteOkButton.click();
+		WaitUtility.waitForAnElementToBeVisible(driver, deleteMessage);
 	}
 
 	public String getNoRecordsMessage() {
