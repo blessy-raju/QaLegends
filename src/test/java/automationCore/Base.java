@@ -54,13 +54,13 @@ public class Base {
 		WaitUtility.waitForAnElement(driver);
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	@Parameters("browser")
 	public void setBrowser(String browserName) {
 		initializeBrowser(browserName);
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void closeBrowser(ITestResult result) {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			takeScreenshot(result);
