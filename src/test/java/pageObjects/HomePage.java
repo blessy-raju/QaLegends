@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import constants.Constants;
 import utilities.DateUtility;
 
 public class HomePage {
@@ -76,7 +77,7 @@ public class HomePage {
 	}
 
 	public String getCurrentDate() {
-		return DateUtility.getUserLoginDate("dd-MM-YYYY");
+		return DateUtility.getUserLoginDate(Constants.DATE_FORMAT);
 	}
 
 }

@@ -15,5 +15,6 @@ public class Constants {
 	public static final String AT_SIGN = "@";
 	public static final String MAIL_SERVER = "yahoo.com";
 	public static final String SEPARATOR = ".";
+	public static final String DATE_FORMAT = "dd-MM-YYYY";
 
 }
