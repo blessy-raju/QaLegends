@@ -14,7 +14,7 @@ import utilities.ExcelUtility;
 import utilities.RandomDataUtility;
 
 public class UserProfilePageTest extends Base {
-	@Test
+	@Test(groups = "Regression")
 	public void verifyEditProfile() {
 		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);

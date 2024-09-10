@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<groups>
 		<run>
-			<include name="Sanity"></include>
+			<include name="Regression"></include>
 			<include name="Smoke"></include>
 		</run>
 	</groups>
@@ -15,13 +15,13 @@
 	<test thread-count="5" name="Test">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<!-- <class name="testScripts.CreateUsersPageTest"/>  -->
+			<class name="testScripts.CreateUsersPageTest" />
 			<class name="testScripts.HomePageTest" />
-			<!--<class name="testScripts.UsersPageTest"/> -->
+			<class name="testScripts.UsersPageTest" />
 			<class name="testScripts.LoginPageTest" />
-			<!--<class name="testScripts.UserProfilePageTest"/>
-      <class name="testScripts.ImportContactsPageTest"/>
-      <class name="testScripts.PasswordResetPageTest"/> -->
+			<class name="testScripts.UserProfilePageTest" />
+			<class name="testScripts.ImportContactsPageTest" />
+			<class name="testScripts.PasswordResetPageTest" />
 		</classes>
 	</test> <!--
 	Test -->

@@ -26,7 +26,7 @@ import utilities.PageUtility;
 import utilities.RandomDataUtility;
 
 public class CreateUsersPageTest extends Base {
-	@Test(groups="Smoke")
+	@Test(groups = "Smoke")
 	public void verifyAddNewUser() {
 		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
@@ -52,21 +52,19 @@ public class CreateUsersPageTest extends Base {
 		createusers.enterFirstName(fName);
 		createusers.enterLastName(lName);
 		createusers.enterEmailId(emailId);
-		createusers.clickRoles();
-		PageUtility.selectOption(createusers.getRoleLists(), expectedRole);
+		createusers.selectRole(expectedRole);
 		createusers.enterUserName(newUserName);
 		createusers.enterPassword(newUserPassword);
 		createusers.enterConfirmPassword(newUserPassword);
 		createusers.enterSalesCommisions(commission);
 		createusers.clickAllowContactsCheckbox();
-		createusers.clickContacts();
-		PageUtility.selectOption(createusers.getContactLists(), expectedContact);
+		createusers.selectContact(expectedContact);
 		userspage = createusers.clickSaveButton();
 		userspage.enterSearchUserName(newUserName);
 		Assert.assertEquals(userspage.getuserEmailId(), emailId, Messages.USER_ADDED_FAILED);
 	}
 
-	@Test
+	@Test(groups = "Regression")
 	public void verifyLoginWithNewlyAddedUser() {
 		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
@@ -91,15 +89,13 @@ public class CreateUsersPageTest extends Base {
 		createusers.enterFirstName(fName);
 		createusers.enterLastName(lName);
 		createusers.enterEmailId(emailId);
-		createusers.clickRoles();
-		PageUtility.selectOption(createusers.getRoleLists(), expectedRole);
+		createusers.selectRole(expectedRole);
 		createusers.enterUserName(newUserName);
 		createusers.enterPassword(newUserPassword);
 		createusers.enterConfirmPassword(newUserPassword);
 		createusers.enterSalesCommisions(commission);
 		createusers.clickAllowContactsCheckbox();
-		createusers.clickContacts();
-		PageUtility.selectOption(createusers.getContactLists(), expectedContact);
+		createusers.selectContact(expectedContact);
 		createusers.clickSaveButton();
 		homepage.clickHomeMenu();
 		homepage.clickLoggedInUserName();

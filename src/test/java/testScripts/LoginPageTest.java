@@ -14,7 +14,7 @@ import pageObjects.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base {
-	@Test(groups="Smoke")
+	@Test(groups = "Smoke")
 	public void verifyValidUserLogin() {
 		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
@@ -27,7 +27,7 @@ public class LoginPageTest extends Base {
 		Assert.assertEquals(actualDropDownUserName, expectedDropDownUserName, Messages.INVALID_USER);
 	}
 
-	@Test(dataProvider = "invalidUserData", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "invalidUserData", dataProviderClass = DataProviders.class, groups = "Regression")
 	public void verifyUserLoginWithInvalidCredentials(String userName, String password) {
 		String expectedErrorMessage = ExcelUtility.getStringData(5, 0, Constants.LOGIN_PAGE);
 		LoginPage login = new LoginPage(driver);

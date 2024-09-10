@@ -13,7 +13,7 @@ import pageObjects.LoginPage;
 import utilities.ExcelUtility;
 
 public class ImportContactsPageTest extends Base {
-	@Test
+	@Test(groups = "Regression")
 	public void verifyImportCustomerContacts() {
 		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);

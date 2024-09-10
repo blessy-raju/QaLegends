@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class CreateUsersPage {
 	WebDriver driver;
 
@@ -60,24 +62,16 @@ public class CreateUsersPage {
 		emailIdField.sendKeys(email);
 	}
 
-	// common code
-	public void clickRoles() {
-		roles.click();
-	}
-
-	public List<WebElement> getRoleLists() {
-		return rolesList;
-	}
-	// end of code
-//	public void selectRole(String role) {
+//	public void clickRoles() {
 //		roles.click();
-//		for (int i = 0; i < rolesList.size(); i++) {
-//			if (rolesList.get(i).getText().equals(role)) {
-//				rolesList.get(i).click();
-//				break;
-//			}
-//		}
+//
 //	}
+
+	public void selectRole(String role) {
+		roles.click();
+		PageUtility.selectOption(rolesList, role);
+//		roles.click();
+	}
 
 	public void enterUserName(String userName) {
 		userNameField.sendKeys(userName);
@@ -108,13 +102,17 @@ public class CreateUsersPage {
 //			}
 //		}
 //	}
-	public void clickContacts() {
+//	public void clickContacts() {
+//		contacts.click();
+//	}
+	public void selectContact(String contact) {
 		contacts.click();
+		PageUtility.selectOption(contactLists, contact);
 	}
 
-	public List<WebElement> getContactLists() {
-		return contactLists;
-	}
+//	public List<WebElement> getContactLists() {
+//		return contactLists;
+//	}
 
 	public UsersPage clickSaveButton() {
 		saveButton.click();

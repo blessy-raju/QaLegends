@@ -17,7 +17,7 @@ import utilities.PageUtility;
 import utilities.RandomDataUtility;
 
 public class UsersPageTest extends Base {
-	@Test
+	@Test(groups = "Regression")
 	public void verifyViewUser() {
 		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
@@ -35,7 +35,7 @@ public class UsersPageTest extends Base {
 		Assert.assertEquals(userPageEmail, userdetailspage.getUserDetailsPageEmail(), Messages.VIEW_USER_FAILED);
 	}
 
-	@Test
+	@Test(groups = "Smoke")
 	public void verifyDeleteUser() {
 		String userName = ExcelUtility.getStringData(0, 0, Constants.LOGIN_PAGE);
 		String password = ExcelUtility.getNumericData(0, 1, Constants.LOGIN_PAGE);
@@ -62,15 +62,13 @@ public class UsersPageTest extends Base {
 		createusers.enterFirstName(fName);
 		createusers.enterLastName(lName);
 		createusers.enterEmailId(emailId);
-		createusers.clickRoles();
-		PageUtility.selectOption(createusers.getRoleLists(), role);
+		createusers.selectRole(role);
 		createusers.enterUserName(newUserName);
 		createusers.enterPassword(pwd);
 		createusers.enterConfirmPassword(pwd);
 		createusers.enterSalesCommisions(commission);
 		createusers.clickAllowContactsCheckbox();
-		createusers.clickContacts();
-		PageUtility.selectOption(createusers.getContactLists(), contact);
+		createusers.selectContact(contact);
 		userspage = createusers.clickSaveButton();
 		userspage.enterSearchUserName(newUserName);
 		userspage.clickDeleteButton();
